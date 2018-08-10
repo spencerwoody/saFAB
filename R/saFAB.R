@@ -123,7 +123,7 @@ saFAB <- function(theta, w, t, sigma, alpha = 0.10,
   return(list(
     Adf = Adf,
     Cdf = Cdf,
-    CdfPlotting =
+    CdfPlotting = CdfPlotting
   ))
 
 }
