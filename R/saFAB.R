@@ -1,0 +1,103 @@
+#' Create selection-adjusted FAB intervals, given the spending function
+#'
+#' @param theta
+#' @param w
+#' @param t
+#' @param alpha
+#' @param yMin minimal value
+#' @param yMax
+#' @param yNum length of
+#' @param verbose logical; if TRUE (default), print progress bars
+#'
+#' @export
+
+saFAB <- function(theta, w, t, sigma, alpha = 0.10,
+                  yMin = -5, yMax = 5, yNum = 5000, verbose = TRUE) {
+  require(dplyr)
+  require(rootSolve)
+  require(splines)
+
+  numTheta <- length(theta)
+
+  # Create vectors for upper and lower acceptance regions
+  Al <- rep(NA, numTheta)
+  Au <- rep(NA, numTheta)
+
+  if (verbose) cat("\nCreating acceptance regions...\n")
+
+  # Fill create acceptance regions
+  prog <- progress_estimated(numTheta)
+  for (i in 1:numTheta) {
+
+    # Tail regions
+    wl <- alpha * w[i]
+    wu <- 1 - alpha + wl
+
+    # saFAB acceptance regions
+    Al[i] <- qtnorm(wl, theta[i], sigma, t)
+    Au[i] <- qtnorm(wu, theta[i], sigma, t)
+
+    # Print progress update
+    if (verbose) prog$tick()$print()
+
+  }
+
+  # Make data.frame for acceptance regions
+  Adf <- data.frame(
+    theta = rep(theta, 2),
+    A = c(Al, Au),
+    ul = c(rep("lower", numTheta), rep("upper", numTheta))
+  )
+
+  # Create spline functions for acceptance regions
+  AlFun <- splinefun(theta, Al)
+  AuFun <- splinefun(theta, Au)
+
+  # Create confidence intervals along a sequence of y values
+  yGrid <- seq(yMin, yMax, length.out = yNum)
+
+  Cdf <- data.frame(
+    y = yGrid,
+    intervals = I(vector("list", length(yGrid))),
+    numIntervals = NA,
+    intervalLength = NA
+  )
+
+  if (verbose) cat("\nCreating confidence intervals...\n")
+  prog <- progress_estimated(yNum)
+  for (i in 1:length(yGrid)) {
+
+    # Temporary auxillary functions
+    Lfun <- function(x) {
+      AlFun(x) - yGrid[i]
+    }
+
+    Ufun <- function(x) {
+      AuFun(x) - yGrid[i]
+    }
+
+
+    # Roots of auxillary functions
+    rootsL <- uniroot.all(Lfun, range(theta))
+    rootsU <- uniroot.all(Ufun, range(theta))
+
+    # Intervals come from roots of auxillary functions
+    Cdf$intervals[[i]] <- c(rootsU, rootsL)
+
+    # Number of disjoint intervals
+    Cdf$numIntervals[i] <- length(Cdf$intervals[[i]]) / 2
+
+    # Length of intervals
+    Cdf$intervalLength[i] <- totalLength(Cdf$intervals[[i]])
+
+    # Print progress bar
+    if (verbose) prog$tick()$print()
+  }
+
+  # Output
+  return(list(
+    Adf = Adf,
+    Cdf = Cdf
+  ))
+
+}

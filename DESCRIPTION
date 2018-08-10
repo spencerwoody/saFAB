@@ -7,7 +7,7 @@ Author: Spencer Woody
 Maintainer: Spencer Woody <spencer.woody@utexas.edu>
 Description: Create Bayes-optimal Selection-adjusted Intervals via the saFAB Procedure
 License: GPL (>= 2)
-Imports: Rcpp (>= 0.12.18)
-LinkingTo: Rcpp
+Imports: dplyr, splines, rootSolve
+LinkingTo: dplyr
 RoxygenNote: 6.1.0
-Suggests: testthat
+Suggests: ggplot2
