@@ -7,6 +7,7 @@
 #' @param p proportion for spike part
 #' @param tau standard deviation of normal
 #'
+#' @export
 marginal_ss_joint <- function(y, sigma, t, p, tau) {
 
   density <- (p * dnorm(y, 0, sqrt(sigma^2 + tau^2)) +

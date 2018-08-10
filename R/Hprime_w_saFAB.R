@@ -8,6 +8,7 @@
 #' @param marginal_fun the function for the marginal distribution
 #' @param ... optional arguments to the marginal function
 #'
+#' @export
 Hprime_w_safab <- function(w, theta, sigma, t, alpha, marginal_fun, ...) {
 
 

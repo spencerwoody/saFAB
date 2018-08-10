@@ -7,6 +7,7 @@
 #' @param p proportion for spike part
 #' @param tau standard deviation of normal
 #'
+#' @export
 marginal_ss_conditional <- function(y, sigma, t, p, tau) {
 
   int_part <- integrate(int_fun_gauss,

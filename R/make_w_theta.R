@@ -9,7 +9,7 @@
 #' @param theta_max maximal theta to create spending function
 #' @param num_theta length of theta grid
 #' @param epsilon starting point for root finding
-#'
+#' @export
 make_w_theta <- function(marginal_fun, sigma, t, ...,
                          alpha = 0.05,
                          theta_min = -7, theta_max = 7,

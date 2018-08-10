@@ -45,6 +45,8 @@ sd^2) * 1(abs(x) > t)
 \examples{
 dtnorm(3, 0, 1, 1)
 dtnorm(0.5, 0, 1, 1)
+
 qtnorm(3, 0, 1, 1)
 qtnorm(0.5, 0, 1, 1)
+
 }

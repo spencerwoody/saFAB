@@ -10,7 +10,8 @@
 #' @examples
 #' qtnorm(3, 0, 1, 1)
 #' qtnorm(0.5, 0, 1, 1)
-
+#'
+#' @export
 dtnorm <- function(p, mean, sd, t, log.p = FALSE) {
   require(dplyr)
 
