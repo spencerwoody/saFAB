@@ -5,8 +5,8 @@
 #' @param t truncation point
 #' @param ... other arguments to marginal function
 #' @param alpha confidence level
-#' @param theta_min
-#' @param theta_max
+#' @param theta_min minimal theta to create spending function
+#' @param theta_max maximal theta to create spending function
 #' @param num_theta length of theta grid
 #' @param epsilon starting point for root finding
 #'

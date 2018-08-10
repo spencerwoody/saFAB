@@ -18,6 +18,10 @@ make_w_theta(marginal_fun, sigma, t, ..., alpha = 0.05, theta_min = -7,
 
 \item{alpha}{confidence level}
 
+\item{theta_min}{minimal theta to create spending function}
+
+\item{theta_max}{maximal theta to create spending function}
+
 \item{num_theta}{length of theta grid}
 
 \item{epsilon}{starting point for root finding}
