@@ -1,11 +1,11 @@
 Package: saFAB
 Type: Package
-Title: What the Package Does in One 'Title Case' Line
+Title: Create Bayes-optimal Selection-adjusted Intervals via the saFAB Procedure
 Version: 0.1
 Date: 2018-08-09
 Author: Spencer Woody
 Maintainer: Spencer Woody <spencer.woody@utexas.edu>
-Description: Stuff
+Description: Create Bayes-optimal Selection-adjusted Intervals via the saFAB Procedure
 License: GPL (>= 2)
 Imports: Rcpp (>= 0.12.18)
 LinkingTo: Rcpp

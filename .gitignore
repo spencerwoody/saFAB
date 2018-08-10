@@ -335,3 +335,4 @@ Temporary Items
 
 # R history file (who actually uses these files anyway?)
 .Rhistory
+.Rproj.user
