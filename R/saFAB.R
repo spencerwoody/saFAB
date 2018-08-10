@@ -1,12 +1,12 @@
 #' Create selection-adjusted FAB intervals, given the spending function
 #'
-#' @param theta
-#' @param w
-#' @param t
-#' @param alpha
-#' @param yMin minimal value
-#' @param yMax
-#' @param yNum length of
+#' @param theta vector of thetas from spending function
+#' @param w vector for spending function
+#' @param t truncation point
+#' @param alpha confidence level
+#' @param yMin minimal value of y for the confidence interval
+#' @param yMax maxmimal value of y for the confidence interval
+#' @param yNum length of vector of y's at which to make confidence interval
 #' @param verbose logical; if TRUE (default), print progress bars
 #'
 #' @export
