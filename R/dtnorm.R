@@ -20,7 +20,7 @@ dtnorm <- function(x, mean, sd, t, log.p = FALSE) {
   # Tail areas of corresponding (nontruncated) normal distribution
   C <- pnorm((-t - mean) / sd) + 1 - pnorm((t - mean) / sd)
 
-  density <- case_when(abs(x) > t ~ dnorm(x, mean, sd, log) / C,
+  density <- case_when(abs(x) > t ~ dnorm(x, mean, sd, log.p) / C,
                        TRUE ~ 0)
 
   if (log.p) {
