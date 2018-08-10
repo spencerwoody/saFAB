@@ -12,7 +12,7 @@
 #' dtnorm(3, 0, 1, 1)
 #' dtnorm(0.5, 0, 1, 1)
 #'
-#' @export
+#'
 
 dtnorm <- function(x, mean, sd, t, log.p = FALSE) {
   require(dplyr)
