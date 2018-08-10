@@ -16,8 +16,8 @@ Hprime_w_safab <- function(w, theta, sigma, t, alpha, marginal_fun, ...) {
   F_inv_2 <- qtnorm(alpha * w            , theta, sigma, t)
 
   marginal_fun(F_inv_1, sigma = sigma, t = t, ...)  /
-    pdf_y(F_inv_1, theta, sigma, t) -
+    dtnorm(F_inv_1, theta, sigma, t) -
     marginal_fun(F_inv_2, sigma = sigma, t = t, ...) /
-    pdf_y(F_inv_2, theta, sigma, t)
+    dtnorm(F_inv_2, theta, sigma, t)
 
 }
