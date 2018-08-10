@@ -94,10 +94,36 @@ saFAB <- function(theta, w, t, sigma, alpha = 0.10,
     if (verbose) prog$tick()$print()
   }
 
+  # Output the confidence interval dataframe for plotting
+
+  # Confidence interval dataframe for plotting
+  CdfPlotting <- data.frame(
+    y = rep(NA, sum(Cdf$numIntervals)),
+    lower = NA,
+    upper = NA
+  )
+
+  rowCount <- 1
+
+  for (j in 1:nrow(Cdf)) {
+    numIntervalsJ <- Cdf$numIntervals[j]
+
+    Rows <- (rowCount):(rowCount + numIntervalsJ - 1)
+
+    CdfPlotting$y[Rows] <- rep(Cdf$y[j], numIntervalsJ)
+
+    CdfPlotting$lower[Rows] <- Cdf$intervals[[j]][seq(1, numIntervalsJ * 2, by = 2)]
+    CdfPlotting$upper[Rows] <- Cdf$intervals[[j]][seq(2, numIntervalsJ * 2, by = 2)]
+
+    rowCount <- rowCount + numIntervalsJ
+
+  }
+
   # Output
   return(list(
     Adf = Adf,
-    Cdf = Cdf
+    Cdf = Cdf,
+    CdfPlotting =
   ))
 
 }
