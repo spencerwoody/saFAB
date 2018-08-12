@@ -10,4 +10,5 @@ License: GPL (>= 2)
 Imports: dplyr, splines, rootSolve
 LinkingTo: dplyr
 RoxygenNote: 6.1.0
+Encoding: UTF-8
 Suggests: ggplot2

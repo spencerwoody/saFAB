@@ -15,6 +15,9 @@ pr_fitter(y, mu0 = NULL, sig0 = NULL, nulltype = "theoretical")
 
 \item{nulltype}{foobar}
 }
+\value{
+a list, where my_fit is the fitted marginal or y
+}
 \description{
 Use predictive recursion to obtain a
 }
