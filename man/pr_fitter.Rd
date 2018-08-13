@@ -2,7 +2,8 @@
 % Please edit documentation in R/pr_fitter.R
 \name{pr_fitter}
 \alias{pr_fitter}
-\title{Use predictive recursion to obtain a}
+\title{Use predictive recursion to obtain a semiparametric estimate of
+marginal of y,}
 \usage{
 pr_fitter(y, mu0 = NULL, sig0 = NULL, nulltype = "theoretical")
 }
@@ -19,5 +20,6 @@ pr_fitter(y, mu0 = NULL, sig0 = NULL, nulltype = "theoretical")
 a list, where my_fit is the fitted marginal or y
 }
 \description{
-Use predictive recursion to obtain a
+Use predictive recursion to obtain a semiparametric estimate of
+marginal of y,
 }

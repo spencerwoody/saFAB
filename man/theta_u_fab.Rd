@@ -4,14 +4,14 @@
 \alias{theta_u_fab}
 \title{theta_u_fab}
 \usage{
-theta_u_fab(theta_vec, w_theta, y, sigma, alpha = 0.1)
+theta_u_fab(y, theta_vec, w_theta, sigma, alpha = 0.1)
 }
 \arguments{
+\item{y}{single observation}
+
 \item{theta_vec}{vector of thetas}
 
 \item{w_theta}{vector of w's for thetas (i.e., spending function)}
-
-\item{y}{single observation}
 
 \item{sigma}{standard deviation of sampling distribution}
 

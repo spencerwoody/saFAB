@@ -3,7 +3,7 @@
 #' sd^2) * 1(abs(x) > t)
 #'
 #'
-#' .. content for \details{} ..
+#' 
 #' @title dtnorm
 #' @param x vector of values at which to evaluate density 
 #' @param mean vector of means

@@ -60,7 +60,8 @@ make_w_fab <- function(sigma, p, tau, alpha = 0.1, theta_min = -7,
     }
   }
   
-  return(data.frame(theta = theta_vec, w))
+  return(data.frame(theta = theta_vec,
+                    w = w_theta_fab))
   
 }
 
@@ -68,16 +69,16 @@ make_w_fab <- function(sigma, p, tau, alpha = 0.1, theta_min = -7,
 ##'
 ##' 
 ##' @title theta_l_fab
+##' @param y single observation
 ##' @param theta_vec vector of thetas
 ##' @param w_theta vector of w's for thetas (i.e., spending function)
-##' @param y single observation
 ##' @param sigma standard deviation of sampling distribution
 ##' @param alpha confidence level
 ##' @return lower bound of FAB interval
 ##' @author Spencer Woody
 ##'
 ##' @export
-theta_l_fab <- function(theta_vec, w_theta, y, sigma, alpha = 0.1) {
+theta_l_fab <- function(y, theta_vec, w_theta, sigma, alpha = 0.1) {
   theta_l_fab <- y + sigma * qnorm(alpha * (1 - w_theta)) - theta_vec
   
   lower_quantile_fab <- y + 
@@ -90,16 +91,16 @@ theta_l_fab <- function(theta_vec, w_theta, y, sigma, alpha = 0.1) {
 ##'
 ##' 
 ##' @title theta_u_fab
+##' @param y single observation
 ##' @param theta_vec vector of thetas
 ##' @param w_theta vector of w's for thetas (i.e., spending function)
-##' @param y single observation
 ##' @param sigma standard deviation of sampling distribution
 ##' @param alpha confidence level
 ##' @return upper bound of FAB interval
 ##' @author Spencer Woody
 ##'
 ##' @export
-theta_u_fab <- function(theta_vec, w_theta, y, sigma, alpha = 0.1) {
+theta_u_fab <- function(y, theta_vec, w_theta, sigma, alpha = 0.1) {
   
   theta_u_fab <- y + sigma * qnorm(1 - alpha * w_theta) - theta_vec
   

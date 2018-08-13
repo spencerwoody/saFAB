@@ -27,9 +27,6 @@ Find quantile of selection-adjusted Bayesian posterior
 distribution (i.e. under conditional selection), using normal
 sampling distribution and spike-and-slab prior on means thetas
 }
-\details{
-.. content for \details{} ..
-}
 \author{
 Spencer Woody
 }

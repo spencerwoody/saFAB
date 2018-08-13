@@ -52,7 +52,7 @@ sabayes_cdf_quantile <- function(theta, y, p, sigma, tau, t, d = NULL,
 ##' distribution (i.e. under conditional selection), using normal
 ##' sampling distribution and spike-and-slab prior on means thetas
 ##'
-##' .. content for \details{} ..
+##' 
 ##' @title sabayes_find_quantile
 ##' @param y value of y
 ##' @param p prior probability of signal
@@ -69,9 +69,9 @@ sabayes_find_quantile <- function(y, p, sigma, tau, t, q) {
   
   d <- make_d(y, p, sigma, tau, t)
   
-  root <- uniroot(sabayes_cdf_quantile, 
-                  lower = min(y - 5, -5), upper = max(y + 5, 5),
-                  y = y, p = p, sigma = sigma, tau = tau, t = t, d = d, q = q)$root
+  root <- uniroot(sabayes_cdf_quantile, lower = min(y - 5, -5),
+                  upper = max(y + 5, 5), y = y, p = p, sigma = sigma,
+                  tau = tau, t = t, d = d, q = q)$root
   
   if (abs(root) < 1e-4) {
     return(0)

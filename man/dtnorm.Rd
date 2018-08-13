@@ -24,9 +24,6 @@ The density of the double-truncated normal distribution at x
 Density for the doulbe-truncated normal distribution, x ~ N(mean,
 sd^2) * 1(abs(x) > t)
 }
-\details{
-.. content for \details{} ..
-}
 \author{
 Spencer Woody
 }
