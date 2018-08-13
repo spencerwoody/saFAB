@@ -19,7 +19,8 @@ marginal_laplace_joint(y, sigma, t, tau)
 density of marginal of y for laplacian prior
 }
 \description{
-marginal density of y for Laplacian prior on mean theta
+marginal density of y for Laplacian prior on mean theta, under
+joint selection
 }
 \author{
 Spencer Woody

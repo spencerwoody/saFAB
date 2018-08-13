@@ -19,7 +19,8 @@ marginal_hs_joint(y, sigma, tau, t)
 marginal density of y for horseshoe prior on mean theta
 }
 \description{
-marginal density of y for horseshoe prior on mean theta
+marginal density of y for horseshoe prior on mean theta, under
+joint selection
 }
 \details{
 Uses lower bound of horseshoe density, from Carvahlo et al. (2008)

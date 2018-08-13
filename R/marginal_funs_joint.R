@@ -2,7 +2,8 @@
 ## ------------------------------------------------------------------------
 ## Gaussian prior for theta
 
-##' Marginal density of y for Gaussian prior on mean theta
+##' Marginal density of y for Gaussian prior on mean theta, under
+##' joint selection
 ##'
 ##' 
 ##' @title marginal_gauss_joint
@@ -34,7 +35,8 @@ int_fun_laplace_joint <- function(theta, y, sigma, tau, t) {
   dnorm(y, theta, sigma) * pdf_laplace(theta, tau)
 }
 
-##' marginal density of y for Laplacian prior on mean theta
+##' marginal density of y for Laplacian prior on mean theta, under
+##' joint selection
 ##'
 ##' 
 ##' @title marginal_laplace_joint
@@ -63,7 +65,8 @@ int_fun_hs_joint <- function(theta, tau, y, sigma) {
   dnorm(y, theta, sigma) * log(1 + 4 * tau^2 / theta^2) 
 }
 
-##' marginal density of y for horseshoe prior on mean theta
+##' marginal density of y for horseshoe prior on mean theta, under
+##' joint selection
 ##'
 ##' Uses lower bound of horseshoe density, from Carvahlo et al. (2008)
 ##' @title marginal_hs_joint

@@ -19,7 +19,8 @@ marginal_gauss_joint(y, sigma, t, tau)
 Marginal density of y for Gaussian prior on mean theta
 }
 \description{
-Marginal density of y for Gaussian prior on mean theta
+Marginal density of y for Gaussian prior on mean theta, under
+joint selection
 }
 \author{
 Spencer Woody
