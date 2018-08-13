@@ -2,8 +2,7 @@
 % Please edit documentation in R/dtnorm.R
 \name{dtnorm}
 \alias{dtnorm}
-\title{Density for the doulbe-truncated normal distribution, x ~ N(mean,
-sd^2) * 1(abs(x) > t)}
+\title{dtnorm}
 \usage{
 dtnorm(x, mean, sd, t, log.p = FALSE)
 }
@@ -14,9 +13,9 @@ dtnorm(x, mean, sd, t, log.p = FALSE)
 
 \item{sd}{vector of standard deviations}
 
-\item{t}{truncation point}
+\item{t}{truncation value}
 
-\item{log}{logical; if TRUE, probability given as log(p)}
+\item{log.p}{logical; if TRUE, probability given as log(p)}
 }
 \value{
 The density of the double-truncated normal distribution at x
@@ -25,9 +24,9 @@ The density of the double-truncated normal distribution at x
 Density for the doulbe-truncated normal distribution, x ~ N(mean,
 sd^2) * 1(abs(x) > t)
 }
-\examples{
-dtnorm(3, 0, 1, 1)
-dtnorm(0.5, 0, 1, 1)
-
-
+\details{
+.. content for \details{} ..
+}
+\author{
+Spencer Woody
 }

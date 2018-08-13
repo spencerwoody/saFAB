@@ -4,7 +4,7 @@
 #'
 #'
 #' .. content for \details{} ..
-#' @title 
+#' @title dtnorm
 #' @param x vector of values at which to evaluate density 
 #' @param mean vector of means
 #' @param sd vector of standard deviations

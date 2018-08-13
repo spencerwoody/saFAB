@@ -2,13 +2,19 @@
 % Please edit documentation in R/totalLength.R
 \name{totalLength}
 \alias{totalLength}
-\title{Calculate total length of disjoint intervals}
+\title{totalLength}
 \usage{
 totalLength(intervals)
 }
 \arguments{
-\item{intervals}{vector containing start and end points of intervals}
+\item{intervals}{}
+}
+\value{
+Sum of lengths of disjoint intervals
 }
 \description{
-Calculate total length of disjoint intervals
+Sum length of disjoint intervals
+}
+\author{
+Spencer Woody
 }
