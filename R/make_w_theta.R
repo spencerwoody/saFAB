@@ -28,10 +28,11 @@ make_w_theta <- function(marginal_fun, sigma, t, ...,
 
     w_vecI <- try(
       uniroot(Hprime_w_safab,
-                        lower = epsilon, upper = 1 - epsilon,
-                        theta = theta_vec[i],
-                        sigma = sigma, t = t, alpha = alpha,
-                        marginal_fun = marginal_fun, ...)$root
+              lower = epsilon, upper = 1 - epsilon,
+              theta = theta_vec[i],
+              sigma = sigma, t = t, alpha = alpha,
+              marginal_fun = marginal_fun, ...)$root,
+      silent = TRUE
     )
 
     if (inherits(w_vecI, "try-error")) {
