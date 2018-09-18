@@ -1,5 +1,5 @@
 #' Create optimal spending function for the specified marginal distribution
-#'
+#' 
 #' @param marginal_fun function for marginal density of y
 #' @param sigma standard deviation for sampling model
 #' @param t truncation point
@@ -26,6 +26,7 @@ make_w_theta <- function(marginal_fun, sigma, t, ...,
 
   for (i in 1:num_theta) {
 
+    ## Try to 
     w_vecI <- try(
       uniroot(Hprime_w_safab,
               lower = epsilon, upper = 1 - epsilon,
@@ -35,6 +36,8 @@ make_w_theta <- function(marginal_fun, sigma, t, ...,
       silent = TRUE
     )
 
+    ## If there's an error, it means that the root finder failed;
+    ## probably because the real root is close to 
     if (inherits(w_vecI, "try-error")) {
       if (theta_vec[i] < 0) {
         w_vecI <- epsilon

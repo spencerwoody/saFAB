@@ -1,3 +1,4 @@
+
 ##' Check whether x is in the range of any one of several disjoint
 ##' intervals
 ##'
