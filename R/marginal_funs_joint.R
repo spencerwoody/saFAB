@@ -19,6 +19,23 @@ marginal_gauss_joint <- function(y, sigma, t, tau) {
   dnorm(y, 0, sqrt(sigma^2 + tau^2)) * ifelse(abs(y) > t, 1, 0)
 }
 
+##' .. content for \description{} (no empty lines) ..
+##'
+##' .. content for \details{} ..
+##' @title 
+##' @param y 
+##' @param sigma 
+##' @param t 
+##' @param mu 
+##' @param tau 
+##' @return 
+##' @author Spencer Woody
+##'
+##' @export
+marginal_gaussnc_joint <- function(y, sigma, t, mu, tau) {
+  dnorm(y, mu, sqrt(sigma^2 + tau^2)) * ifelse(abs(y) > t, 1, 0)
+}
+
 
 ## ------------------------------------------------------------------------
 ## Laplace prior for theta

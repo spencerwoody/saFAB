@@ -1,4 +1,4 @@
-#' Quantile for the doulbe-truncated normal distribution, x ~ N(mean,
+#' Quantile for the double-truncated normal distribution, x ~ N(mean,
 #' sd^2) * 1(abs(x) > t)
 #'
 #' @param x vector of values at which to evaluate density

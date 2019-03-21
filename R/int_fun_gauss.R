@@ -10,3 +10,8 @@ int_fun_gauss <- function(theta, y, sigma, tau, t) {
   dnorm(y, theta, sigma) * dnorm(theta, 0, tau) /
     Pr_S_conditional(theta, sigma, t)
 }
+
+int_fun_gaussnc <- function(theta, y, sigma, mu, tau, t) {
+  dnorm(y, theta, sigma) * dnorm(theta, mu, tau) /
+    Pr_S_conditional(theta, sigma, t)
+}

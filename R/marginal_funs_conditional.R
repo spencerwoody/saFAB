@@ -23,6 +23,17 @@ marginal_gauss_conditional <- function(y, sigma, tau, t) {
     ifelse(abs(y) > t, 1, 0)
 }
 
+
+marginal_gaussnc_conditional <- function(y, sigma, mu, tau, t) {
+  integrate(int_fun_gaussnc,
+            lower = -Inf, 
+            upper = +Inf,
+            y = y, sigma = sigma, mu = mu, tau = tau, t = t)$value * 
+    ifelse(abs(y) > t, 1, 0)
+}
+
+
+
 ## ------------------------------------------------------------------------
 ## Laplace prior for theta
 
