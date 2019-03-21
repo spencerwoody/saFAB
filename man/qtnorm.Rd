@@ -2,7 +2,7 @@
 % Please edit documentation in R/qtnorm.R
 \name{qtnorm}
 \alias{qtnorm}
-\title{Quantile for the doulbe-truncated normal distribution, x ~ N(mean,
+\title{Quantile for the double-truncated normal distribution, x ~ N(mean,
 sd^2) * 1(abs(x) > t)}
 \usage{
 qtnorm(p, mean, sd, t, log.p = FALSE)
@@ -22,7 +22,7 @@ qtnorm(p, mean, sd, t, log.p = FALSE)
 The density of the double-truncated normal distribution at x
 }
 \description{
-Quantile for the doulbe-truncated normal distribution, x ~ N(mean,
+Quantile for the double-truncated normal distribution, x ~ N(mean,
 sd^2) * 1(abs(x) > t)
 }
 \examples{

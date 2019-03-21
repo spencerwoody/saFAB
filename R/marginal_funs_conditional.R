@@ -23,7 +23,19 @@ marginal_gauss_conditional <- function(y, sigma, tau, t) {
     ifelse(abs(y) > t, 1, 0)
 }
 
-
+##' .. content for \description{} (no empty lines) ..
+##'
+##' .. content for \details{} ..
+##' @title non zero mean Gaussian
+##' @param y 
+##' @param sigma 
+##' @param mu 
+##' @param tau 
+##' @param t 
+##' @return 
+##' @author Spencer Woody
+##'
+##' @export
 marginal_gaussnc_conditional <- function(y, sigma, mu, tau, t) {
   integrate(int_fun_gaussnc,
             lower = -Inf, 
