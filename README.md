@@ -11,3 +11,14 @@ approach](https://arxiv.org/abs/1810.11042) by Woody and Scott (2018).
 ## install.packages("devtools")
 devtools::install_github("spencerwoody/saFAB")
 ```
+
+<!-- ## Usage  -->
+
+<!-- ### Example:  -->
+
+<!-- ``` r -->
+
+<!-- library(saFAB) -->
+
+<!-- wtheta <- make_w_theta(marginal) -->
+<!-- ``` -->

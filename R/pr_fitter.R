@@ -66,7 +66,6 @@ pr_fitter <- function(y, mu0=NULL, sig0=NULL, nulltype = 'theoretical') {
   my_fit <- function(y) exp(logmy_fit(y))
 
   ## Marginal under joint selection
-
   my_fit_joint <- function(y, sigma, t) {
     my_fit(y) * ifelse(abs(y) > t, 1, 0)
   }

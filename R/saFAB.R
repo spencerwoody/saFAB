@@ -1,3 +1,4 @@
+
 #' Create selection-adjusted FAB intervals, given the spending function
 #'
 #' @param theta vector of thetas from spending function
