@@ -5,7 +5,8 @@
 \title{Create optimal spending function for the specified marginal distribution}
 \usage{
 make_w_theta(marginal_fun, sigma, t, ..., alpha = 0.05, theta_min = -7,
-  theta_max = 7, num_theta = 5000, epsilon = 1e-10, verbose = F)
+  theta_max = 7, num_theta = 5000, epsilon = 1e-10,
+  verbose = FALSE)
 }
 \arguments{
 \item{marginal_fun}{function for marginal density of y}
@@ -14,13 +15,13 @@ make_w_theta(marginal_fun, sigma, t, ..., alpha = 0.05, theta_min = -7,
 
 \item{t}{truncation point}
 
-\item{...}{other arguments to marginal function}
+\item{...}{additional arguments to marginal function}
 
 \item{alpha}{confidence level}
 
 \item{theta_min}{minimal theta to create spending function}
 
-\item{theta_max}{maximal theta to create spending function}
+\item{theta_max}{maximum theta to create spending function}
 
 \item{num_theta}{length of theta grid}
 
