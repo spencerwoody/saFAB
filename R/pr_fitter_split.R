@@ -1,6 +1,6 @@
 
 # Function used for estimating marginal of y
-int_fun_cnd <- function(theta, y, sigma_orig, n = 1, prior_fit, t) {
+int_fun_cnd <- function(theta, y, sigma_orig, n, prior_fit, t) {
   dnorm(y, theta, sigma_orig / sqrt(n)) * prior_fit(theta) /
     Pr_S_cnd(theta, sigma_orig / sqrt(n), t)
 }
@@ -40,7 +40,7 @@ pr_fitter_splitmat <- function(y, mu0=NULL, sig0=NULL, nulltype = "theoretical")
     null_fit <- efron(yTr, nmids = 200, df = 15,
                      nulltype = "empirical")
     mu0 <- null_fit$mu0
-    sig0 <- null_fit$sig0
+    if(missing(sig0)) sig0 <- null_fit$sig0
   } else {
     error("nulltype must be either \"theoretical\" or \"empirical\"")
   }
@@ -79,9 +79,6 @@ pr_fitter_splitmat <- function(y, mu0=NULL, sig0=NULL, nulltype = "theoretical")
   }
   
   ## Marginal under conditional selection
-
-
-
   ## sigma argument needed to match up with Hprime_w_safab function...
   my_fit_cnd <- function(y, sigma, t, sigma_orig, n = n) {
     int_part <- integrate(int_fun_cnd, lower = -Inf, upper = +Inf,

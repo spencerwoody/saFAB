@@ -92,7 +92,7 @@ eb_fun <- function(y) {
 ##' @export
 eb_fun_knownsigma <- function(y, sigma) {
   
-  eb_optim <- optim(par = c(log(5), log(0.5), log(5)),
+  eb_optim <- optim(par = c(log(0.5), log(5)),
                     fn = marginal_y_optim_knownsigma, 
                     y = y, sigma = sigma,
                     hessian = T)

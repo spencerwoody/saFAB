@@ -11,7 +11,6 @@
 #' @param verbose logical; if TRUE (default), print progress bars
 #'
 #' @export
-
 saFAB <- function(theta, w, t, sigma, alpha = 0.10,
                   yMin = -5, yMax = 5, yNum = 5000, verbose = TRUE) {
   require(dplyr)
