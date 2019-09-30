@@ -4,6 +4,9 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+//' Trapezoid integral approximation
+//'
+//' @export
 // [[Rcpp::export]]
 double trapezoid(NumericVector x, NumericVector y) {
   int n = x.size();
