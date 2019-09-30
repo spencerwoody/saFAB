@@ -33,8 +33,8 @@ marginal_est_fixed <- function(y, pi0, sigma, prior_fit, t) {
 #'
 #' @export
 pr_fitter <- function(y, mu0=NULL, sig0=NULL, nulltype = 'theoretical') {
-  require(FDRreg)
-  require(splines)
+  ## require(FDRreg)
+  ## require(splines)
 
   # sampling model of y
   if(nulltype == 'theoretical') {

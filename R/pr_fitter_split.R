@@ -20,8 +20,8 @@ int_fun_jnt <- function(theta, y, sigma_orig, n = 1, prior_fit, t) {
 ##'
 ##' @export
 pr_fitter_splitmat <- function(y, mu0=NULL, sig0=NULL, nulltype = "theoretical") {
-  require(FDRreg)
-  require(splines)
+  ## require(FDRreg)
+  ## require(splines)
 
   ## Split y's
   N <- nrow(y)
