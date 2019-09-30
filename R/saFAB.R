@@ -11,9 +11,6 @@
 #' @param verbose logical; if TRUE (default), print progress bars
 #'
 #'
-#' @importFrom Rcpp evalCpp
-#' @useDynLib saFAB
-#'
 #' @export
 saFAB <- function(theta, w, t, sigma, alpha = 0.10,
                   yMin = -5, yMax = 5, yNum = 5000, verbose = TRUE) {
