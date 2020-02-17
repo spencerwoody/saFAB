@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1533885685893.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "785252737",
+    "id" : "5383F9E4",
+    "lastKnownWriteTime" : 1533886395,
+    "last_content_update" : 1533886643786,
+    "path" : "~/Desktop/saFAB/R/Hprime_w_saFAB.R",
+    "project_path" : "R/Hprime_w_saFAB.R",
+    "properties" : {
+        "cursorPosition" : "11,14",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

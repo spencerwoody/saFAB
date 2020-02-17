@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1533886050549.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1310289287",
+    "id" : "B236B7CD",
+    "lastKnownWriteTime" : 1533885658,
+    "last_content_update" : 1533885658,
+    "path" : "~/Desktop/saFAB/R/marginal_ss_conditional.R",
+    "project_path" : "R/marginal_ss_conditional.R",
+    "properties" : {
+        "cursorPosition" : "18,77",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

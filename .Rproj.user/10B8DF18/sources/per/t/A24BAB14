@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1534011704424.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4206633709",
+    "id" : "A24BAB14",
+    "lastKnownWriteTime" : 1534012181,
+    "last_content_update" : 1534012181172,
+    "path" : "~/Desktop/saFAB/R/pr_fitter.R",
+    "project_path" : "R/pr_fitter.R",
+    "properties" : {
+        "cursorPosition" : "6,59",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,208 @@
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ ls
+DESCRIPTION  [0m[01;34mman[0m  NAMESPACE  [01;34mR[0m  README.md  saFAB.Rproj
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ rm DESCRIPTION 
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit -m ""f"i"r"s"t" "f"u"n"c"t"i"o"n"s" "a"d"d"e"d"
+[master c4c2c25] first functions added
+ 17 files changed, 346 insertions(+), 15 deletions(-)
+ create mode 100644 R/Hprime_w_saFAB.R
+ create mode 100644 R/Pr_S_conditional.R
+ create mode 100644 R/int_fun_gauss.R
+ create mode 100644 R/make_w_theta.R
+ create mode 100644 R/marginal_ss_conditional.R
+ create mode 100644 R/marginal_ss_joint.R
+ create mode 100644 R/qtnorm.R
+ create mode 100644 man/Hprime_w_safab.Rd
+ create mode 100644 man/Pr_S_conditional.Rd
+ create mode 100644 man/int_fun_gauss.Rd
+ create mode 100644 man/make_w_theta.Rd
+ create mode 100644 man/marginal_ss_conditional.Rd
+ create mode 100644 man/marginal_ss_joint.Rd
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push
+Counting objects: 21, done.
+Delta compression using up to 8 threads.
+Compressing objects:   4% (1/21)   Compressing objects:   9% (2/21)   Compressing objects:  14% (3/21)   Compressing objects:  19% (4/21)   Compressing objects:  23% (5/21)   Compressing objects:  28% (6/21)   Compressing objects:  33% (7/21)   Compressing objects:  38% (8/21)   Compressing objects:  42% (9/21)   Compressing objects:  47% (10/21)   Compressing objects:  52% (11/21)   Compressing objects:  57% (12/21)   Compressing objects:  61% (13/21)   Compressing objects:  66% (14/21)   Compressing objects:  71% (15/21)   Compressing objects:  76% (16/21)   Compressing objects:  80% (17/21)   Compressing objects:  85% (18/21)   Compressing objects:  90% (19/21)   Compressing objects:  95% (20/21)   Compressing objects: 100% (21/21)   Compressing objects: 100% (21/21), done.
+Writing objects:   4% (1/21)   Writing objects:   9% (2/21)   Writing objects:  14% (3/21)   Writing objects:  19% (4/21)   Writing objects:  23% (5/21)   Writing objects:  28% (6/21)   Writing objects:  33% (7/21)   Writing objects:  42% (9/21)   Writing objects:  47% (10/21)   Writing objects:  52% (11/21)   Writing objects:  61% (13/21)   Writing objects:  66% (14/21)   Writing objects:  71% (15/21)   Writing objects:  76% (16/21)   Writing objects:  80% (17/21)   Writing objects:  85% (18/21)   Writing objects:  90% (19/21)   Writing objects: 100% (21/21)   Writing objects: 100% (21/21), 5.63 KiB | 961.00 KiB/s, done.
+Total 21 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/5)   [Kremote: Resolving deltas:  20% (1/5)   [Kremote: Resolving deltas:  40% (2/5)   [Kremote: Resolving deltas:  60% (3/5)   [Kremote: Resolving deltas:  80% (4/5)   [Kremote: Resolving deltas: 100% (5/5)   [Kremote: Resolving deltas: 100% (5/5), completed with 2 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   1736bf3..c4c2c25  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commin[Kt -m ""t"r"y" "t"o" "f"i"x"[1P"[1P"[1P"g"e"t" "t"h"u"s"[1P"[1P"u"u"[1P"i"s"[1P"[1P"[1P"iu"[1P"s" "t"o" "w"o"r"k"
+[master bcdd8d4] try to get this to work
+ 4 files changed, 11 insertions(+), 2 deletions(-)
+ create mode 100644 tests/testthat.R
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ giu[Kt push
+Counting objects: 9, done.
+Delta compression using up to 8 threads.
+Compressing objects:  12% (1/8)   Compressing objects:  25% (2/8)   Compressing objects:  37% (3/8)   Compressing objects:  50% (4/8)   Compressing objects:  62% (5/8)   Compressing objects:  75% (6/8)   Compressing objects:  87% (7/8)   Compressing objects: 100% (8/8)   Compressing objects: 100% (8/8), done.
+Writing objects:  11% (1/9)   Writing objects:  22% (2/9)   Writing objects:  33% (3/9)   Writing objects:  44% (4/9)   Writing objects:  55% (5/9)   Writing objects:  66% (6/9)   Writing objects:  77% (7/9)   Writing objects:  88% (8/9)   Writing objects: 100% (9/9)   Writing objects: 100% (9/9), 850 bytes | 850.00 KiB/s, done.
+Total 9 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/6)   [Kremote: Resolving deltas:  16% (1/6)   [Kremote: Resolving deltas:  33% (2/6)   [Kremote: Resolving deltas:  50% (3/6)   [Kremote: Resolving deltas:  66% (4/6)   [Kremote: Resolving deltas:  83% (5/6)   [Kremote: Resolving deltas: 100% (6/6)   [Kremote: Resolving deltas: 100% (6/6), completed with 6 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   c4c2c25..bcdd8d4  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ ls
+build.R  build.R~  DESCRIPTION  [0m[01;34mman[0m  NAMESPACE  [01;34mR[0m  README.md  saFAB.Rproj  [01;34mtests[0m
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ touch m[KTODO.org
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ it [K[K[Kgit add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit -m ""C"r"e"a"t"e" "N"A"M"E"S"C"[1P"P"A"C"E"
+[master dd34697] Create NAMESPACE
+ 10 files changed, 18 insertions(+), 2 deletions(-)
+ create mode 100644 TODO.org
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push
+Counting objects: 14, done.
+Delta compression using up to 8 threads.
+Compressing objects:   7% (1/14)   Compressing objects:  14% (2/14)   Compressing objects:  21% (3/14)   Compressing objects:  28% (4/14)   Compressing objects:  35% (5/14)   Compressing objects:  42% (6/14)   Compressing objects:  50% (7/14)   Compressing objects:  57% (8/14)   Compressing objects:  64% (9/14)   Compressing objects:  71% (10/14)   Compressing objects:  78% (11/14)   Compressing objects:  85% (12/14)   Compressing objects:  92% (13/14)   Compressing objects: 100% (14/14)   Compressing objects: 100% (14/14), done.
+Writing objects:   7% (1/14)   Writing objects:  14% (2/14)   Writing objects:  21% (3/14)   Writing objects:  28% (4/14)   Writing objects:  35% (5/14)   Writing objects:  42% (6/14)   Writing objects:  50% (7/14)   Writing objects:  57% (8/14)   Writing objects:  64% (9/14)   Writing objects:  71% (10/14)   Writing objects:  78% (11/14)   Writing objects:  85% (12/14)   Writing objects:  92% (13/14)   Writing objects: 100% (14/14)   Writing objects: 100% (14/14), 1.31 KiB | 447.00 KiB/s, done.
+Total 14 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/10)   [Kremote: Resolving deltas:  10% (1/10)   [Kremote: Resolving deltas:  20% (2/10)   [Kremote: Resolving deltas:  30% (3/10)   [Kremote: Resolving deltas:  40% (4/10)   [Kremote: Resolving deltas:  50% (5/10)   [Kremote: Resolving deltas:  60% (6/10)   [Kremote: Resolving deltas:  70% (7/10)   [Kremote: Resolving deltas:  80% (8/10)   [Kremote: Resolving deltas:  90% (9/10)   [Kremote: Resolving deltas: 100% (10/10)   [Kremote: Resolving deltas: 100% (10/10), completed with 10 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   bcdd8d4..dd34697  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ i[Kgit add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ i[Kgit commit -m ""F"i"x" "s"i"l"l"y" "t"y"p"o"."."."
+[master a30a178] Fix silly typo...
+ 5 files changed, 40 insertions(+), 27 deletions(-)
+ create mode 100644 man/qtnorm.Rd
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push
+Counting objects: 9, done.
+Delta compression using up to 8 threads.
+Compressing objects:  11% (1/9)   Compressing objects:  22% (2/9)   Compressing objects:  33% (3/9)   Compressing objects:  44% (4/9)   Compressing objects:  55% (5/9)   Compressing objects:  66% (6/9)   Compressing objects:  77% (7/9)   Compressing objects:  88% (8/9)   Compressing objects: 100% (9/9)   Compressing objects: 100% (9/9), done.
+Writing objects:  11% (1/9)   Writing objects:  22% (2/9)   Writing objects:  33% (3/9)   Writing objects:  44% (4/9)   Writing objects:  55% (5/9)   Writing objects:  66% (6/9)   Writing objects:  77% (7/9)   Writing objects:  88% (8/9)   Writing objects: 100% (9/9)   Writing objects: 100% (9/9), 1.05 KiB | 539.00 KiB/s, done.
+Total 9 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/7)   [Kremote: Resolving deltas:  14% (1/7)   [Kremote: Resolving deltas:  28% (2/7)   [Kremote: Resolving deltas:  42% (3/7)   [Kremote: Resolving deltas:  57% (4/7)   [Kremote: Resolving deltas:  71% (5/7)   [Kremote: Resolving deltas:  85% (6/7)   [Kremote: Resolving deltas: 100% (7/7)   [Kremote: Resolving deltas: 100% (7/7), completed with 7 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   dd34697..a30a178  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git pushcommit -m "Fix silly typo..."[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd -A[K
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git add -A[2Ppushcommit -m "Fix silly typo..." ..."(..."a..."g..."i..."n..."[1P..."[1P..."a..."i..."n...")..."
+[master b8da94d] Fix silly typo (again)...
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 382 bytes | 382.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)   [Kremote: Resolving deltas:  33% (1/3)   [Kremote: Resolving deltas:  66% (2/3)   [Kremote: Resolving deltas: 100% (3/3)   [Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   a30a178..b8da94d  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push[Kgit pushcommit -m "Fix silly typo (again)..."[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd -A[K
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git add -A[2Ppushcommit -m "Fix silly typo (again)..."
+On branch master
+Your branch is up to date with 'saFAB/master'.
+
+nothing to commit, working tree clean
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ 
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ 
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ 
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit  [K-m ""f"i"x"e"d"?"
+On branch master
+Your branch is up to date with 'saFAB/master'.
+
+nothing to commit, working tree clean
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push
+Everything up-to-date
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit -m ""f"i"x"e"d" "b"u"g" "("h"o"p"e"f"u"l"l"y")"
+[master 01121eb] fixed bug (hopefully)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ gt[Kit push
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 379 bytes | 379.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)   [Kremote: Resolving deltas:  33% (1/3)   [Kremote: Resolving deltas:  66% (2/3)   [Kremote: Resolving deltas: 100% (3/3)   [Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   b8da94d..01121eb  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ 
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ 
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ 
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git re[K[Kcommit =[K-m ""s"a"f"a"b"[1P"[1P"[1P"[1P"F"A"[1P"[1P"a"F"A"B" "f"u"n"c"i"t"o"n"[1P"[1P"[1P"[1P"t"i"o"n"a"l"i"t"y"
+[master 7b90415] saFAB functionality
+ 3 files changed, 108 insertions(+), 3 deletions(-)
+ create mode 100644 R/saFAB.R
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git ps[Kush
+Warning: Permanently added the RSA host key for IP address '192.30.255.112' to the list of known hosts.
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects:  16% (1/6)   Compressing objects:  33% (2/6)   Compressing objects:  50% (3/6)   Compressing objects:  66% (4/6)   Compressing objects:  83% (5/6)   Compressing objects: 100% (6/6)   Compressing objects: 100% (6/6), done.
+Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 1.48 KiB | 756.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)   [Kremote: Resolving deltas:  33% (1/3)   [Kremote: Resolving deltas:  66% (2/3)   [Kremote: Resolving deltas: 100% (3/3)   [Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   01121eb..7b90415  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git addd [K[K -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit -m ""a"d"d" "a"[1P"s"a"F"A"B" "o"t"[1P"[1P"t"o" "n"a"m"e"s"p"a"c"e"
+[master f5cc9ba] add saFAB to namespace
+ 3 files changed, 37 insertions(+), 7 deletions(-)
+ create mode 100644 man/saFAB.Rd
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push
+Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects:  14% (1/7)   Compressing objects:  28% (2/7)   Compressing objects:  42% (3/7)   Compressing objects:  57% (4/7)   Compressing objects:  71% (5/7)   Compressing objects:  85% (6/7)   Compressing objects: 100% (7/7)   Compressing objects: 100% (7/7), done.
+Writing objects:  14% (1/7)   Writing objects:  28% (2/7)   Writing objects:  42% (3/7)   Writing objects:  57% (4/7)   Writing objects:  71% (5/7)   Writing objects:  85% (6/7)   Writing objects: 100% (7/7)   Writing objects: 100% (7/7), 1.09 KiB | 1.09 MiB/s, done.
+Total 7 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/5)   [Kremote: Resolving deltas:  20% (1/5)   [Kremote: Resolving deltas:  40% (2/5)   [Kremote: Resolving deltas:  60% (3/5)   [Kremote: Resolving deltas:  80% (4/5)   [Kremote: Resolving deltas: 100% (5/5)   [Kremote: Resolving deltas: 100% (5/5), completed with 5 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   7b90415..f5cc9ba  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ b[Kgit add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit -[K-m ""[6Padd -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit -m ""a"d"d" "[1P" "t"o"t"a"l"L"e"n"g"h"[1P"t"h" "f"u"n"c"t"i"o"n"
+[master 310811b] add totalLength function
+ 2 files changed, 23 insertions(+)
+ create mode 100644 R/totalLength.R
+ create mode 100644 man/totalLength.Rd
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects:  16% (1/6)   Compressing objects:  33% (2/6)   Compressing objects:  50% (3/6)   Compressing objects:  66% (4/6)   Compressing objects:  83% (5/6)   Compressing objects: 100% (6/6)   Compressing objects: 100% (6/6), done.
+Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 829 bytes | 829.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)   [Kremote: Resolving deltas:  33% (1/3)   [Kremote: Resolving deltas:  66% (2/3)   [Kremote: Resolving deltas: 100% (3/3)   [Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   f5cc9ba..310811b  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git pushcommit -m "add totalLength function"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd -A[K
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git add -A[2Ppushcommit -m "add totalLength function"
+[master 4946d4f] add totalLength function
+ 1 file changed, 27 insertions(+), 1 deletion(-)
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit -m "add totalLength function"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd -A[K[2Ppushcommit -m "add totalLength function"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush[K
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 659 bytes | 659.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)   [Kremote: Resolving deltas:  33% (1/3)   [Kremote: Resolving deltas:  66% (2/3)   [Kremote: Resolving deltas: 100% (3/3)   [Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   310811b..4946d4f  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git pushcommit -m "add totalLength function"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd -A[K
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit -m ""f"i"x" "r"e"t"u"r"n" "m"i"s"t"a"k"e"
+[master fafa3d8] fix return mistake
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git push
+Warning: Permanently added the RSA host key for IP address '192.30.255.113' to the list of known hosts.
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 380 bytes | 380.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)   [Kremote: Resolving deltas:  33% (1/3)   [Kremote: Resolving deltas:  66% (2/3)   [Kremote: Resolving deltas: 100% (3/3)   [Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   4946d4f..fafa3d8  master -> master
+git add -A
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ git commit 0m [K[K[K-m :[K""a"d"d" "r"p"[1P"[1P"p"r"e"d"i"c"t"i"v"e" "r"e"c"u"r"s"i"o"n" "f"o"r" "m"a"r"g"i"n"a"l" "e"s"t"i"a"m"[1P"[1P"m"a"t"i"o"n"
+[master 372eb15] add predictive recursion for marginal estimation
+ 3 files changed, 68 insertions(+)
+ create mode 100644 R/pr_fitter.R
+ create mode 100644 man/pr_fitter.Rd
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ giut p[K[K[K[Kt push
+Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects:  14% (1/7)   Compressing objects:  28% (2/7)   Compressing objects:  42% (3/7)   Compressing objects:  57% (4/7)   Compressing objects:  71% (5/7)   Compressing objects:  85% (6/7)   Compressing objects: 100% (7/7)   Compressing objects: 100% (7/7), done.
+Writing objects:  14% (1/7)   Writing objects:  28% (2/7)   Writing objects:  42% (3/7)   Writing objects:  57% (4/7)   Writing objects:  71% (5/7)   Writing objects:  85% (6/7)   Writing objects: 100% (7/7)   Writing objects: 100% (7/7), 1.28 KiB | 656.00 KiB/s, done.
+Total 7 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/4)   [Kremote: Resolving deltas:  25% (1/4)   [Kremote: Resolving deltas:  50% (2/4)   [Kremote: Resolving deltas:  75% (3/4)   [Kremote: Resolving deltas: 100% (4/4)   [Kremote: Resolving deltas: 100% (4/4), completed with 4 local objects.[K
+To github.com:spencerwoody/saFAB.git
+   fafa3d8..372eb15  master -> master
+]0;/home/spencer/Desktop/saFAB]0;spencer@t480s: ~/Desktop/saFAB[01;32mspencer@t480s[00m:[01;34msaFAB[00m$ 3D[K[K

@@ -1,0 +1,13 @@
+Package: saFAB
+Type: Package
+Title: Create Bayes-optimal Selection-adjusted Intervals via the saFAB Procedure
+Version: 0.1
+Date: 2018-08-09
+Author: Spencer Woody
+Maintainer: Spencer Woody <spencer.woody@utexas.edu>
+Description: Create Bayes-optimal Selection-adjusted Intervals via the saFAB Procedure
+License: GPL (>= 2)
+Imports: dplyr, splines, rootSolve
+LinkingTo: dplyr
+RoxygenNote: 6.1.0
+Suggests: ggplot2

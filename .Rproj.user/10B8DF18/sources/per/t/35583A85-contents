@@ -1,0 +1,4 @@
+
+** Add argument for make_w_theta that's a string to specify prior for theta
+
+** In saFAB function, get rid of y's outside of selection region

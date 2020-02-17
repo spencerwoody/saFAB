@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1533932928193.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3988950872",
+    "id" : "449DA300",
+    "lastKnownWriteTime" : 1533937774,
+    "last_content_update" : 1533937774270,
+    "path" : "~/Desktop/saFAB/R/saFAB.R",
+    "project_path" : "R/saFAB.R",
+    "properties" : {
+        "cursorPosition" : "125,29",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
