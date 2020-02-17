@@ -5,6 +5,12 @@ int_fun_cnd <- function(theta, y, sigma_orig, n, prior_fit, t) {
     Pr_S_cnd(theta, sigma_orig / sqrt(n), t)
 }
 
+int_fun_cnd1 <- function(theta, y, sigma_orig, n, prior_fit, t) {
+  dnorm(y, theta, sigma_orig / sqrt(n)) * prior_fit(theta) /
+    Pr_S_cnd1(theta, sigma_orig / sqrt(n), t)
+}
+
+
 int_fun_jnt <- function(theta, y, sigma_orig, n = 1, prior_fit, t) {
   dnorm(y, theta, sigma_orig / sqrt(n)) * prior_fit(theta) 
 }

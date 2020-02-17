@@ -12,9 +12,13 @@
 #'
 #'
 #' @export
-saFAB <- function(theta, w, t, sigma, alpha = 0.10,
-                  yMin = -5, yMax = 5, yNum = 5000, verbose = TRUE) {
+saFAB1 <- function(theta, w, t, sigma, alpha = 0.10,
+                  yMin = NA, yMax = 5, yNum = 5000, verbose = TRUE) {
 
+
+  if (is.na(yMin)) {
+    yMin <- t + 0.001
+  }
 
   numTheta <- length(theta)
 
@@ -33,8 +37,8 @@ saFAB <- function(theta, w, t, sigma, alpha = 0.10,
     wu <- 1 - alpha + wl
 
     # saFAB acceptance regions
-    Al[i] <- qtnorm(wl, theta[i], sigma, t)
-    Au[i] <- qtnorm(wu, theta[i], sigma, t)
+    Al[i] <- qtnorm1(wl, theta[i], sigma, t)
+    Au[i] <- qtnorm1(wu, theta[i], sigma, t)
 
     # Print progress update
     if (verbose) prog$tick()$print()
@@ -87,7 +91,7 @@ saFAB <- function(theta, w, t, sigma, alpha = 0.10,
     Cdf$numIntervals[i] <- length(Cdf$intervals[[i]]) / 2
 
     # Length of intervals
-    Cdf$intervalLength[i] <- totalLength(Cdf$intervals[[i]])
+    ## Cdf$intervalLength[i] <- totalLength(Cdf$intervals[[i]])
 
     # Print progress bar
     if (verbose) prog$tick()$print()
@@ -96,33 +100,33 @@ saFAB <- function(theta, w, t, sigma, alpha = 0.10,
   # Output the confidence interval dataframe for plotting
 
   # Confidence interval dataframe for plotting
-  CdfPlotting <- data.frame(
-    y = rep(NA, sum(Cdf$numIntervals)),
-    lower = NA,
-    upper = NA
-  )
+  ## CdfPlotting <- data.frame(
+  ##   y = rep(NA, sum(Cdf$numIntervals)),
+  ##   lower = NA,
+  ##   upper = NA
+  ## )
 
   rowCount <- 1
 
-  for (j in 1:nrow(Cdf)) {
-    numIntervalsJ <- Cdf$numIntervals[j]
+  ## for (j in 1:nrow(Cdf)) {
+  ##   numIntervalsJ <- Cdf$numIntervals[j]
 
-    Rows <- (rowCount):(rowCount + numIntervalsJ - 1)
+  ##   Rows <- (rowCount):(rowCount + numIntervalsJ - 1)
 
-    CdfPlotting$y[Rows] <- rep(Cdf$y[j], numIntervalsJ)
+  ##   CdfPlotting$y[Rows] <- rep(Cdf$y[j], numIntervalsJ)
 
-    CdfPlotting$lower[Rows] <- Cdf$intervals[[j]][seq(1, numIntervalsJ * 2, by = 2)]
-    CdfPlotting$upper[Rows] <- Cdf$intervals[[j]][seq(2, numIntervalsJ * 2, by = 2)]
+  ##   CdfPlotting$lower[Rows] <- Cdf$intervals[[j]][seq(1, numIntervalsJ * 2, by = 2)]
+  ##   CdfPlotting$upper[Rows] <- Cdf$intervals[[j]][seq(2, numIntervalsJ * 2, by = 2)]
 
-    rowCount <- rowCount + numIntervalsJ
+  ##   rowCount <- rowCount + numIntervalsJ
 
-  }
+  ## }
 
   # Output
   return(list(
     Adf = Adf,
-    Cdf = Cdf,
-    CdfPlotting = CdfPlotting
+    Cdf = Cdf
+    ## CdfPlotting = CdfPlotting
   ))
 
 }

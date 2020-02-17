@@ -15,6 +15,9 @@ pr_fitter_nosplit <- function(y, mu0=NULL, sig0=NULL, nulltype = "theoretical") 
 
   ## Split y's
   N <- nrow(y)
+
+  if (!is.matrix(y)) y <- matrix(y, ncol = 1)
+  
   yTr <- rowMeans(y) #y's for estimating prior
 
   ## y's for constructing intervals
@@ -69,7 +72,20 @@ pr_fitter_nosplit <- function(y, mu0=NULL, sig0=NULL, nulltype = "theoretical") 
     ifelse(abs(y) > t, 1, 0)
     
   }
-  
+
+  my_fit_jnt1 <- function(y, sigma, t, sigma_orig, n = n) {
+
+    int_part <- integrate(int_fun_jnt, 
+                          lower = -Inf, 
+                          upper = +Inf, n = n,
+                          y = y, sigma_orig = sigma_orig,
+                          prior_fit = prior_fit, t = t)$value
+
+    (p * int_part + (1 - p) * dnorm(y, 0, sigma_orig / sqrt(n))) *
+      ifelse(y > t, 1, 0)
+    
+  }
+
   ## Marginal under conditional selection
   ## sigma argument needed to match up with Hprime_w_safab function...
   my_fit_cnd <- function(y, sigma, t, sigma_orig, n = n) {
@@ -83,13 +99,28 @@ pr_fitter_nosplit <- function(y, mu0=NULL, sig0=NULL, nulltype = "theoretical") 
       ifelse(abs(y) > t, 1, 0)
     
   }
-  
+
+  my_fit_cnd1 <- function(y, sigma, t, sigma_orig, n = n) {
+    int_part <- integrate(int_fun_cnd1, lower = -Inf, upper = +Inf,
+                          y = y, sigma_orig = sigma_orig,
+                          prior_fit = prior_fit, n = n, t = t)$value
+    
+    (p * int_part + 
+     (1 - p) * dnorm(y, 0, sigma_orig / sqrt(n)) /
+     Pr_S_cnd1(0, sigma_orig / sqrt(n), t)) * 
+      ifelse(y > t, 1, 0)
+    
+  }
+
   return(list(
     prior_fit = prior_fit,
     my_fit = my_fit,
     my_fit_jnt = my_fit_jnt,
+    my_fit_jnt1 = my_fit_jnt1,
     my_fit_cnd = my_fit_cnd,
+    my_fit_cnd1 = my_fit_cnd1,
     pr_fit = pr_fit,
+    mu0 = mu0,
     sig0 = sig0,
     phat = p
   ))

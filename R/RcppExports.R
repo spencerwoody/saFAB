@@ -5,14 +5,14 @@
 #'
 #' @export
 trapezoid <- function(x, y) {
-    .Call('_saFAB_trapezoid', PACKAGE = 'saFAB', x, y)
+    .Call(`_saFAB_trapezoid`, x, y)
 }
 
 eval_pr_dens <- function(z, mu0, sig0, grid_x, grid_theta) {
-    .Call('_saFAB_eval_pr_dens', PACKAGE = 'saFAB', z, mu0, sig0, grid_x, grid_theta)
+    .Call(`_saFAB_eval_pr_dens`, z, mu0, sig0, grid_x, grid_theta)
 }
 
 PredictiveRecursionFDR <- function(z, sweeporder, grid_x, theta_guess, mu0 = 0.0, sig0 = 1.0, nullprob = 0.95, decay = -0.67) {
-    .Call('_saFAB_PredictiveRecursionFDR', PACKAGE = 'saFAB', z, sweeporder, grid_x, theta_guess, mu0, sig0, nullprob, decay)
+    .Call(`_saFAB_PredictiveRecursionFDR`, z, sweeporder, grid_x, theta_guess, mu0, sig0, nullprob, decay)
 }
 

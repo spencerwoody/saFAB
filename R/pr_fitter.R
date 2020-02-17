@@ -44,7 +44,7 @@ pr_fitter <- function(y, mu0=NULL, sig0=NULL, nulltype = 'theoretical') {
     null_fit <- efron(y, nmids = 200, df = 15,
                      nulltype = 'empirical')
     mu0 <- null_fit$mu0
-    sig0 <- null_fit$sig0
+    if (missing(sig0)) sig0 <- null_fit$sig0
   } else {
     error('nulltype must be either "theoretical" or "empirical"')
   }
@@ -93,7 +93,8 @@ pr_fitter <- function(y, mu0=NULL, sig0=NULL, nulltype = 'theoretical') {
     my_fit_joint = my_fit_joint,
     my_fit_conditional = my_fit_conditional,
     pr_fit = pr_fit,
-    sig0 = sig0
+    sig0 = sig0,
+    mu0 = mu0
   ))
 
 }

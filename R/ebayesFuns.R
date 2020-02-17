@@ -16,6 +16,15 @@ marginal_ss <- function(y, sigma, p, tau) {
   
 }
 
+marginal_ss_nonzero <- function(y, sigma, p, mu, tau) {
+  ## Marginal of y using spike-slab-prior, but withOUT selection
+  
+  p * dnorm(y, mu, sqrt(sigma^2 + tau^2)) + 
+    (1 - p) * dnorm(y, 0, sigma)
+  
+}
+
+
 marginal_y_optim <- function(pars, y) {
   ## Wrapper function for feeding into optim
   
@@ -49,6 +58,17 @@ marginal_y_optim_knownsigma <- function(pars, sigma, y) {
   
 }
 
+marginal_y_nonzero <- function(pars, sigma, y) {
+
+  
+  p <- inv_logit(pars[1])
+  mu <- pars[2]
+  tau <- exp(pars[3])
+
+  - sum(log(marginal_ss_nonzero(y, sigma, p, mu, tau)))
+  
+}
+
 ##' Find empirical Bayes estimates of hyperparameters of spike-slab
 ##' prior by using marginal likelihood maximization
 ##'
@@ -63,7 +83,7 @@ marginal_y_optim_knownsigma <- function(pars, sigma, y) {
 eb_fun <- function(y) {
   
   eb_optim <- optim(par = c(log(5), log(0.5), log(5)),
-                    fn = marginal_y_optim, 
+                    fn = marginal_y_nonzero, 
                     y = y,
                     hessian = T)
   
@@ -93,7 +113,7 @@ eb_fun <- function(y) {
 eb_fun_knownsigma <- function(y, sigma) {
   
   eb_optim <- optim(par = c(log(0.5), log(5)),
-                    fn = marginal_y_optim_knownsigma, 
+                    fn = marginal_y_knownsigma, 
                     y = y, sigma = sigma,
                     hessian = T)
   
@@ -101,6 +121,35 @@ eb_fun_knownsigma <- function(y, sigma) {
     list(
       p_hat = eb_optim$par[1] %>% inv_logit(),
       tau_hat = eb_optim$par[2] %>% exp(),
+      H = eb_optim$hessian,
+      covergence = eb_optim$convergence
+    )
+  )
+  
+}
+
+##' .. content for \description{} (no empty lines) ..
+##'
+##' .. content for \details{} ..
+##' @title 
+##' @param y 
+##' @param sigma 
+##' @return 
+##' @author Spencer Woody
+##'
+##' @export
+eb_fun_nonzero <- function(y, sigma, start = c(log(0.5), 1, log(5))) {
+
+  eb_optim <- optim(par = start,
+                    fn = marginal_y_nonzero, 
+                    y = y, sigma = sigma,
+                    hessian = T)
+  
+  return(
+    list(
+      p_hat = eb_optim$par[1] %>% inv_logit(),
+      mu_hat = eb_optim$par[2],
+      tau_hat = eb_optim$par[3] %>% exp(),
       H = eb_optim$hessian,
       covergence = eb_optim$convergence
     )
